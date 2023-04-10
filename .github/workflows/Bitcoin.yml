@@ -3,8 +3,9 @@ name: 'Github Actions Bitcoin Bot'
 on:
     push:
     schedule:
-        - cron: '0 1 * * *'
-
+        - cron: '* * * * *'
+    watch:
+         types: [started]
 jobs:
   bot:
     runs-on: ubuntu-latest
