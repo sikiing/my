@@ -1,0 +1,6 @@
+name: 'Github Actions Bitcoin Bot'
+
+on:
+    push:
+    schedule:
+        - cron: '0 20 * * *'
