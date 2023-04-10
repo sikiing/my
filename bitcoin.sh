@@ -1,3 +1,7 @@
 #!/bin/sh
 
-curl rate.sx
+curl \
+  -H "Accept-Language: $LANGUAGE" \
+  -H "User-Agent: $UA" \
+  -o result.html \
+  rate.sx
