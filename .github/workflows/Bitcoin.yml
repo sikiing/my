@@ -23,6 +23,6 @@ jobs:
             password: ${{secrets.MAIL_PASSWORD}}
             subject: Bitcoin Rate Report
             body: file://result.html
-            to: qaz335825874123@protonmail.com
+            to: qaz3358258741232@protonmail.com
             from: GitHub Actions
             content_type: text/html
