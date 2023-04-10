@@ -3,4 +3,25 @@ name: 'Github Actions Bitcoin Bot'
 on:
     push:
     schedule:
-        - cron: '0 20 * * *'
+        - cron: '0 1 * * *'
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout codes
+        uses: actions/checkout@v1
+        - name: Get Result
+        run: bash ./bitcoin.sh
+        - name: Send mail
+        uses: dawidd6/action-send-mail@master
+        with:
+            server_address: smtp.163.com
+            server_port: 465
+            username: ${{secrets.MAIL_USERNAME}}
+            password: ${{secrets.MAIL_PASSWORD}}
+            subject: Bitcoin Rate Report
+            body: file://result.html
+            to: qaz335825874123@protonmail.com
+            from: GitHub Actions
+            content_type: text/html
